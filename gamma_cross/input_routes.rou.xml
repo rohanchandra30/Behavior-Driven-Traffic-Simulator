@@ -1,0 +1,49 @@
+
+<!--
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+   <vType id="SUMO_DEFAULT_TYPE" accel="0.8" decel="4.5" sigma="0" length="5" minGap="2" maxSpeed="70"/>
+   <route id="always_right" edges="1fi 1si 4o 4fi 4si 2o 2fi 2si 3o 3fi 3si 1o 1fi"/>
+   <flow id="always_right" type="SUMO_DEFAULT_TYPE" route="always_right" begin="0" end="3030" period="30"/>
+   <route id="always_left" edges="3fi 3si 2o 2fi 2si 4o 4fi 4si 1o 1fi 1si 3o 3fi"/>
+   <flow id="always_left" type="SUMO_DEFAULT_TYPE" route="always_left" begin="0" end="3030" period="30"/>
+   <route id="horizontal" edges="2fi 2si 1o 1fi 1si 2o 2fi"/>
+   <flow id="horizontal" type="SUMO_DEFAULT_TYPE" route="horizontal" begin="0" end="3030" period="30"/>
+   <route id="vertical" edges="3fi 3si 4o 4fi 4si 3o 3fi"/>
+   <flow id="vertical" type="SUMO_DEFAULT_TYPE" route="vertical" begin="0" end="3030" period="30"/>
+</routes>
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+   <vTypeDistribution id="mixed">
+        <vType accel="1.0" decel="5.0" id="AggrCar" length="5.0" minGap="2.0" maxSpeed="50.0" sigma="0" color = "1,0,0" />
+        <vType accel="1.0" decel="5.0" id="Car" length="5.0" minGap="2.0" maxSpeed="50.0" sigma="0"/>
+   </vTypeDistribution>
+<!--
+   <route id="always_right" edges="1fi 1si 3o" />
+   <route id="always_left" edges="1fi 1si 4o"/>
+   <route id="vertical" edges="4fi 4si 3o"/>
+   <route id="horizontal" edges="1fi 1si 2o"/>
+
+ -->
+   <route id="always_right" edges="1fi 1si 4o 4fi 4si 2o 2fi 2si 3o 3fi 3si 1o"/>
+   <route id="vertical" edges="3fi 3si 4o 4fi 4si 3o"/>
+   <route id="always_left" edges="3fi 3si 2o 2fi 2si 4o 4fi 4si 1o 1fi 1si 3o"/>
+   <route id="horizontal" edges="2fi 2si 1o 1fi 1si 2o"/>
+
+<!-- ========================================================ROHAN COMMENT: You can have more red cars and can observe =========================================================
+ ==================================================== the "red-car-traffic-light-breaking" feature if you SWAP the order of the red and yellow cars =============================-->
+
+   <flow id="alA" type="AggrCar" route="always_left" number = "25" />
+   <flow id="alC" type="Car" route="always_left" number = "10" />
+   <flow id="arA" type="AggrCar" route="always_right" number="25"/> 
+   <flow id="arC" type="Car" route="always_right" number = "10" />
+   
+   <flow id="hoA" type="AggrCar" route="horizontal" number = "25" />
+   <flow id="hoC" type="Car" route="horizontal" number = "10" />
+   <flow id="veA" type="AggrCar" route="vertical" number = "25" />
+   <flow id="veC" type="Car" route="vertical" number = "10" />
+
+<!-- ========================================================ROHAN COMMENT: You can have more red cars and can observe =========================================================
+ ==================================================== the "traffic-light-break" feature if you swap the order of the red and yellow cars =============================-->
+
+
+</routes>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+   <node id="0" x="0.0" y="0.0" type="traffic_light"/> <!-- def. of node "0" -->
+
+   <node id="1" x="-500.0" y="0.0" type="priority"/> <!-- def. of node "1" -->
+   <node id="2" x="+500.0" y="0.0" type="priority"/> <!-- def. of node "2" -->
+   <node id="3" x="0.0" y="-500.0" type="priority"/> <!-- def. of node "3" -->
+   <node id="4" x="0.0" y="+500.0" type="priority"/> <!-- def. of node "4" -->
+
+   <node id="m1" x="-100.0" y="0.0" type="priority"/> <!-- def. of node "m1" -->
+   <node id="m2" x="+100.0" y="0.0" type="priority"/> <!-- def. of node "m2" -->
+   <node id="m3" x="0.0" y="-100.0" type="priority"/> <!-- def. of node "m3" -->
+   <node id="m4" x="0.0" y="+100.0" type="priority"/> <!-- def. of node "m4" -->
+</nodes>

@@ -1,0 +1,125 @@
+<routes>
+    <vTypeDistribution id="mixed">
+        <vType accel="1.0" decel="5.0" id="AggrCar" length="5.0" minGap="2.0" maxSpeed="50.0" sigma="0" color = "1,0,0" />
+        <vType accel="1.0" decel="5.0" id="Car" length="5.0" minGap="2.0" maxSpeed="50.0" sigma="0"/>
+        <vType accel="1.0" decel="5.0" id="pedestrian" length="1.0" minGap="1.0" maxSpeed="10.0" sigma="0" guiShape="pedestrian" />
+    </vTypeDistribution>
+
+    <route id="route0" edges="beg end"/>
+    <person id="person0" depart="0" >
+        <walk from="beg" to="end" startPos="100"/>
+    </person>
+    
+    <vehicle depart="0" id="0" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="1" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="2" route="route0" type="Car"/>
+    <person id="person1" depart="0" >
+        <walk from="beg" to="end" startPos="100"/>
+    </person>
+    <vehicle depart="0" id="3" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="4" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="5" route="route0" type="Car"/>
+    <person id="person2" depart="0" >
+        <walk from="beg" to="end" startPos="100"/>
+    </person>
+    <person id="person3" depart="0">
+        <walk from="beg" to="end" startPos="100"/>
+    </person>
+    <person id="person4" depart="0">
+        <walk from="beg" to="end" startPos="100"/>
+    </person>
+    <vehicle depart="0" id="6" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="7" route="route0" type="Car"/>
+    <vehicle depart="0" id="8" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="9" route="route0" type="Car"/>
+    <vehicle depart="0" id="10" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="11" route="route0" type="Car"/>
+    <vehicle depart="0" id="12" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="13" route="route0" type="Car"/>
+    <vehicle depart="0" id="14" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="15" route="route0" type="Car"/>
+    <vehicle depart="0" id="16" route="route0" type="Car"/>
+    <vehicle depart="0" id="17" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="18" route="route0" type="Car"/>
+    <vehicle depart="0" id="19" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="20" route="route0" type="Car"/>
+    <vehicle depart="0" id="21" route="route0" type="Car"/>
+    <vehicle depart="0" id="22" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="23" route="route0" type="Car"/>
+    <vehicle depart="0" id="24" route="route0" type="Car"/>
+    <vehicle depart="0" id="25" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="26" route="route0" type="Car"/>
+    <vehicle depart="0" id="27" route="route0" type="Car"/>
+    <vehicle depart="0" id="28" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="29" route="route0" type="Car"/>
+    <vehicle depart="0" id="30" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="31" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="32" route="route0" type="Car"/>
+    <vehicle depart="0" id="33" route="route0" type="Car"/>
+    <vehicle depart="0" id="34" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="35" route="route0" type="Car"/>
+    <vehicle depart="0" id="36" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="37" route="route0" type="Car"/>
+    <vehicle depart="0" id="39" route="route0" type="Car"/>
+    <vehicle depart="0" id="40" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="41" route="route0" type="Car"/>
+    <vehicle depart="0" id="42" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="43" route="route0" type="Car"/>
+    <vehicle depart="0" id="44" route="route0" type="Car"/>
+    <vehicle depart="0" id="45" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="46" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="47" route="route0" type="Car"/>
+    <vehicle depart="0" id="48" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="49" route="route0" type="Car"/>
+    <vehicle depart="0" id="50" route="route0" type="Car"/>
+    <vehicle depart="0" id="51" route="route0" type="Car"/>
+    <vehicle depart="0" id="52" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="53" route="route0" type="Car"/>
+    <vehicle depart="0" id="54" route="route0" type="Car"/>
+    <vehicle depart="0" id="55" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="56" route="route0" type="Car"/>
+    <vehicle depart="0" id="57" route="route0" type="Car"/>
+    <vehicle depart="0" id="58" route="route0" type="Car"/>
+    <vehicle depart="0" id="59" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="60" route="route0" type="Car"/>
+    <vehicle depart="0" id="61" route="route0" type="Car"/>
+    <vehicle depart="0" id="62" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="63" route="route0" type="Car"/>
+    <vehicle depart="0" id="64" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="65" route="route0" type="Car"/>
+    <vehicle depart="0" id="66" route="route0" type="Car"/>
+    <vehicle depart="0" id="67" route="route0" type="Car"/>
+    <vehicle depart="0" id="68" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="69" route="route0" type="Car"/>
+    <vehicle depart="0" id="70" route="route0" type="Car"/>
+    <vehicle depart="0" id="71" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="72" route="route0" type="Car"/>
+    <vehicle depart="0" id="73" route="route0" type="Car"/>
+    <vehicle depart="0" id="74" route="route0" type="Car"/>
+    <vehicle depart="0" id="75" route="route0" type="Car"/>
+    <vehicle depart="0" id="76" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="77" route="route0" type="Car"/>
+    <vehicle depart="0" id="78" route="route0" type="Car"/>
+    <vehicle depart="0" id="79" route="route0" type="Car"/>
+    <vehicle depart="0" id="80" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="81" route="route0" type="Car"/>
+    <vehicle depart="0" id="82" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="83" route="route0" type="Car"/>
+    <vehicle depart="0" id="84" route="route0" type="Car"/>
+    <vehicle depart="0" id="85" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="86" route="route0" type="Car"/>
+    <vehicle depart="0" id="87" route="route0" type="Car"/>
+    <vehicle depart="0" id="88" route="route0" type="Car"/>
+    <vehicle depart="0" id="89" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="90" route="route0" type="Car"/>
+    <vehicle depart="0" id="91" route="route0" type="Car"/>
+    <vehicle depart="0" id="92" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="93" route="route0" type="Car"/>
+    <vehicle depart="0" id="94" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="95" route="route0" type="Car"/>
+    <vehicle depart="0" id="96" route="route0" type="Car"/>
+    <vehicle depart="0" id="97" route="route0" type="AggrCar"/>
+    <vehicle depart="0" id="98" route="route0" type="Car"/>
+    <vehicle depart="0" id="99" route="route0" type="AggrCar"/>
+
+</routes>
