@@ -15,16 +15,20 @@ http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
 	   	run python info.py --- create a list infomation about the output (output will be generated in "info_output.xml" file)
 	   	run python plot.py --- plot the density profile
 	 	
-## Network Generation
-	netconvert --node-files xxx.nod.xml --edge-files xxx.edg.xml --connection-files xxx.con.xml --output-file xxx.net.xml
-	OR netconvert xxx.netccfg
-	OR generate Network 'by Hand'
+## Edit the network (Add more lanes or edges)
+	1. add more lanes 
+	open net.net.xml, add a new <lane> tag under <edge> tag
+	2. generate network using node,edge,connection files
+		netconvert --node-files xxx.nod.xml --edge-files xxx.edg.xml --connection-files xxx.con.xml --output-file xxx.net.xml
+		OR netconvert xxx.netccfg
+		OR generate Network 'by Hand'
+## Add more vehicles 
+	open input_routes.rou.xml, add vehicles and set their routes in xxx.route.xml
 ## Setting Generation 
-	Open microscopic simulation (can be done by running python runner.py OR sumo-gui XXX.sumocfg)
-  	Click View Settings
-	Click save button to export your settings to a XXX.settings.xml file
-## Route Generation 
-	Add vehicles and their routes in xxx.route.xml
+	open microscopic simulation (can be done by running python runner.py OR sumo-gui XXX.sumocfg)
+  	click View Settings
+	click save button to export your settings to a XXX.settings.xml file
+	
 ## Features:
 ### 1. Sublane_model:
 #### (1) Occupy empty space:
