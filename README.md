@@ -1,38 +1,37 @@
 # Research_SUMO
 A new trajectory prediction software based on SUMO 
-Useful Tutorials:
+## Useful Tutorials:
 https://sumo.dlr.de/daily/pydoc/traci.html
 http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
 
-1. First Steps
-	Installing SUMO
-		follow this video: https://www.youtube.com/watch?v=R0tyxMw9Uyc
-	Running the Examples
-		1. go to Research_SUMO/sublane_model --- two lanes example
-		2. go to Research_SUMO/gamma_cross ---- traffic light example
-	   		open simulation and test the features --- run python runner.py
-				Comment: red represents aggressive vehicles
-			 	         yellow represents conservative vehicles
-			 	         You can observe the different behaviors of the two types of vehicles
-	   		create a list infomation about the output (output will be generated in "info_output.xml" file) --- run python info.py
-	   		plot the density profile --- run python plot.py
+## Installing SUMO
+	follow this video: https://www.youtube.com/watch?v=R0tyxMw9Uyc
+## Running the Examples
+	1. go to Research_SUMO/sublane_model --- two lanes example
+	2. go to Research_SUMO/gamma_cross ---- traffic light example
+	   	run python runner.py --- open simulation and test the features
+			Comment: red represents aggressive vehicles, yellow represents conservative vehicles
+			 	 You can observe the different behaviors of the two types of vehicles
+	   	run python info.py --- create a list infomation about the output (output will be generated in "info_output.xml" file)
+	   	run python plot.py --- plot the density profile
 	 	
-2. Network Generation
+## Network Generation
 	netconvert --node-files xxx.nod.xml --edge-files xxx.edg.xml --connection-files xxx.con.xml --output-file xxx.net.xml
 	OR netconvert xxx.netccfg
 	OR generate Network 'by Hand'
-3. Setting Generation 
+## Setting Generation 
 	Open microscopic simulation (can be done by running python runner.py OR sumo-gui XXX.sumocfg)
-  Click View Settings
+  	Click View Settings
 	Click save button to export your settings to a XXX.settings.xml file
-4. Route Generation 
+## Route Generation 
 	Add vehicles and their routes in xxx.route.xml
-5. Features:
-	1. Sublane_model:
-		(1) Occupy empty space:
-		Aggressive cars can detect whether there is another car in 19m area. If not, it will increase it's speed by 0.5m/s
-		Conservative cars will remain 5m/s all the time
-	      for i in range(buckets-3):
+## Features:
+### 1. Sublane_model:
+#### (1) Occupy empty space:
+	Aggressive cars can detect whether there is another car in 19m area. If not, it will increase it's speed by 0.5m/s
+	Conservative cars will remain 5m/s all the time
+```
+	 for i in range(buckets-3):
             flag = 0
             for j in range(3):
                 if edges[e][step][i+j] > 2:
@@ -59,9 +58,10 @@ http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
                         if flag == 0:
                             newSpeed = traci.vehicle.getSpeed(v) + 0.5
                             traci.vehicle.slowDown(v, newSpeed,0)
-		(2) Detect block:
-		Conservative cars can change lanes if it blocked an aggressive cars for more than 3 timesteps
-		
+```
+#### (2) Detect block:
+	Conservative cars can change lanes if it blocked an aggressive cars for more than 3 timesteps
+```	
         for v in vehicles:
             Id = traci.vehicle.getTypeID(str(v))
             pos = traci.vehicle.getLanePosition(str(v))
@@ -86,36 +86,39 @@ http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
                                     traci.vehicle.moveTo(v1, e+"_1", pos1+5)
                                 elif index == 1:
                                     traci.vehicle.moveTo(v1, e+"_0", pos1+5)	
-		(3) Do not wait for pedestrains:
-		Conservative cars will wait for pedestrains to cross the road while aggressive cars will not
-			length = traci.lane.getLength(e+"_0")
-        		vehicles = traci.edge.getLastStepVehicleIDs(e)  
-        		persons = traci.edge.getLastStepPersonIDs(e)
-        		# stop conservative cars when there is a crossing
-        		for p in persons:
-            			posP = traci.person.getPosition(str(p))[0]
-            			if length-posP < 3 and length>posP:
-                			for v in vehicles:
-                    				Id = traci.vehicle.getTypeID(str(v))
-                    				pos = traci.vehicle.getLanePosition(str(v))
-                    				if Id == "Car" and length-pos < 10 and length>pos:
-                        				traci.vehicle.slowDown(v, 0,0)
-                        				stopList.add(v)
-
-	
-	2. gamma_cross:
-		(1) Break traffic light 
-		Aggressive cars will ignore traffic light while conservative cars will obey the traffic light 
-		Once cars on the green side have passed, aggressive cars will pass even when the light is red
+```
+#### (3) Do not wait for pedestrains:
+	Conservative cars will wait for pedestrains to cross the road while aggressive cars will not
+```
+	length = traci.lane.getLength(e+"_0")
+        vehicles = traci.edge.getLastStepVehicleIDs(e)  
+        persons = traci.edge.getLastStepPersonIDs(e)
+        # stop conservative cars when there is a crossing
+        for p in persons:
+            posP = traci.person.getPosition(str(p))[0]
+            if length-posP < 3 and length>posP:
+                for v in vehicles:
+                    Id = traci.vehicle.getTypeID(str(v))
+                    pos = traci.vehicle.getLanePosition(str(v))
+                    if Id == "Car" and length-pos < 10 and length>pos:
+                        traci.vehicle.slowDown(v, 0,0)
+                        stopList.add(v)
+```
+### 2. gamma_cross:
+#### (1) Break traffic light 
+	Aggressive cars will ignore traffic light while conservative cars will obey the traffic light 
+	Once cars on the green side have passed, aggressive cars will pass even when the light is red
+```
 	for v in vehicles:
             lane = traci.vehicle.getLaneID(str(v))
             Id = traci.vehicle.getTypeID(v)
             if Id == "AggrCar":
-                traci.vehicle.setSpeedMode(v,7)
-
-		(2) Side move
-		Aggressive cars will move to the front of the conservative cars to avoid waiting for the red light when its nearest lane is empty 
-# step1 of side move
+                traci.vehicle.setSpeedMode(v,7) 
+```
+#### (2) Side move
+	Aggressive cars will move to the front of the conservative cars to avoid waiting for the red light when its nearest lane is empty 
+```
+	# step1 of side move
         for l in net[e]:
             length = traci.lane.getLength(l)
             if traci.lane.getLastStepHaltingNumber(l) >= 2:
@@ -130,7 +133,8 @@ http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
                                 traci.vehicle.moveTo(v1,l1,pos+8)
                                 sidVehicle[v1] = (l, pos+8)
                                 break
- # step2 of side move
+ 	# step2 of side move
     for v in sidVehicle:
         traci.vehicle.moveTo(v,sidVehicle[v][0],sidVehicle[v][1]+8)
     sidVehicle.clear()
+```
