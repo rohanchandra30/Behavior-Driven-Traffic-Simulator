@@ -17,7 +17,7 @@ http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
 	 	
 ## Edit the network (Add more lanes or edges)
 	1. add more lanes 
-	open net.net.xml, add a new <lane> tag under <edge> tag
+		open net.net.xml, add a new <lane> tag under <edge> tag
 	2. generate network using node,edge,connection files
 		netconvert --node-files xxx.nod.xml --edge-files xxx.edg.xml --connection-files xxx.con.xml --output-file xxx.net.xml
 		OR netconvert xxx.netccfg
