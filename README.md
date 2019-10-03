@@ -1,6 +1,6 @@
 A traffic simulation software based on SUMO that incorporates driver behavior. Watch the following GIF for a demo:
 
-<img src="img/demo_gif.gif">
+<img src="img/demo_gif.gif" class="center">
 
 ## Useful Tutorials:
 https://sumo.dlr.de/daily/pydoc/traci.html
