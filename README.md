@@ -1,5 +1,6 @@
-# Research_SUMO
-A traffic simulation software based on SUMO that incorporates driver behavior.
+A traffic simulation software based on SUMO that incorporates driver behavior. Watch the following GIF for a demo:
+
+<img src="img/demo_gif.gif">
 
 ## Useful Tutorials:
 https://sumo.dlr.de/daily/pydoc/traci.html
