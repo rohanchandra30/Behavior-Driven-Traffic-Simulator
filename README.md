@@ -1,5 +1,6 @@
 # Research_SUMO
-A new trajectory prediction software based on SUMO 
+A traffic simulation software based on SUMO that incorporates driver behavior.
+
 ## Useful Tutorials:
 https://sumo.dlr.de/daily/pydoc/traci.html
 http://sumo.sourceforge.net/userdoc/Sumo_at_a_Glance.html
